@@ -1,21 +1,24 @@
-class Person:
-    def __init__(self, fname,lname):
-        self.fname = fname
-        self.lname = lname
+import json
+x = {
+    "name" : "ankit",
+    "age" : 17, 
+    "city" : "new york",
+    "married" : True,
+    "divorce" : False,
+    "children" : ("ankit","virat"),
 
-    def myfunc(self):
-       print(self.fname, self.lname )
+    "cars" : [
+        {"model" : "ferrari","brand" : "mustang"},
+        {"model" : "jaguar","brand" : "hyundai"}
+    ]
+    }
+print(json.dumps(x, indent = 4,sort_keys=True))
 
-class Student(Person):
-    def __init__(self,fname,lname,year):
-        super().__init__(fname,lname)
-        self.graduation_year = year
 
-    def welcome(self):
-        print("Welcome",self.fname,self.lname,"to the class of", self.graduation_year)
-    
-p1 = Student("virat", "kohli",2023)
-p1.welcome()
+
+
+
+
 
 
 
