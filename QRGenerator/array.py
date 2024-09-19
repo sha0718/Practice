@@ -1,18 +1,14 @@
-import json
-x = {
-    "name" : "ankit",
-    "age" : 17, 
-    "city" : "new york",
-    "married" : True,
-    "divorce" : False,
-    "children" : ("ankit","virat"),
-
-    "cars" : [
-        {"model" : "ferrari","brand" : "mustang"},
-        {"model" : "jaguar","brand" : "hyundai"}
-    ]
-    }
-print(json.dumps(x, indent = 4,sort_keys=True))
+def has_unique_characters(s):
+    s = s.lower()
+    for i in range(len(s)):
+        for j in range(i+1,len(s)):
+            if s[i] == s[j]:
+                return False
+    return True
+string1 = "abcdef"
+string2 ="hello"
+print(has_unique_characters(string1))
+print(has_unique_characters(string2))
 
 
 
@@ -24,8 +20,8 @@ print(json.dumps(x, indent = 4,sort_keys=True))
 
 
 
-
-
+    
+ 
 
 
 
