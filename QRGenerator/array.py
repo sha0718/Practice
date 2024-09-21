@@ -1,31 +1,16 @@
-def set_zeroes(matrix):
-    if not matrix or not matrix[0]:
-        return
+def isSubstring(s1,s2):
+    return s2 in s1
+def isRotation(s1,s2):
+    if len(s1) != len(s2) or not s1:
+        return False
     
-    rows , cols = len(matrix) , len(matrix[0])
-    zero_rows = set()
-    zero_cols = set()
-    for i in range(rows):
-        for j in range(cols):
-            if matrix[i][j] == 0:
-                zero_rows.add(i)
-                zero_cols .add(j)
+    combined = s1 + s1
+    return isSubstring(combined ,s2)
+s1 = "waterbottle"
+s2 = "erbottlewat"
+result = isRotation(s1 , s2)
+print(result)
 
-    for i in zero_rows:
-        for j in range(cols):
-            matrix[i][j] = 0   
-
-    for j in zero_cols:
-        for i in range(rows):
-            matrix[i][j] = 0
-matrix = [
-    [1,1,1],
-    [1,0,1],
-    [1,1,1]
-]            
-set_zeroes(matrix)
-for row in matrix:
-    print(row)
             
 
 
