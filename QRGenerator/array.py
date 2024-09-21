@@ -1,23 +1,12 @@
-def reverse_c_string(c_string):
-    # Convert the input string to a list for easier manipulation
-    string_list = list(c_string)
-    
-    # Find the index of the null character
-    null_index = string_list.index('\0') if '\0' in string_list else len(string_list)
-    
-    # Slice the string up to the null character
-    sub_string = string_list[:null_index]
-    
-    # Reverse the substring and append the null character
-    reversed_string = sub_string[::-1] + ['\0']
-    
-    # Join the list back into a string
-    return ''.join(reversed_string)
+def are_anagrams(str1,str2):
+    str1 = str1.replace(" "," ").lower()
+    str2 = str2.replace(" "," ").lower()
+    return sorted(str1) == sorted(str2)
+print(are_anagrams("silent" , "listen"))
+print(are_anagrams("hello","world"))
+            
 
-# Example usage
-c_string = "abcd\0"
-reversed_string = reverse_c_string(c_string)
-print(reversed_string)  # Output should be "dcba\0"
+
 
 
 
