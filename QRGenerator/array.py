@@ -1,15 +1,15 @@
-def isSubstring(s1,s2):
-    return s2 in s1
-def isRotation(s1,s2):
-    if len(s1) != len(s2) or not s1:
-        return False
-    
-    combined = s1 + s1
-    return isSubstring(combined ,s2)
-s1 = "waterbottle"
-s2 = "erbottlewat"
-result = isRotation(s1 , s2)
-print(result)
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+num_terms = 20
+for i in range(num_terms):
+    print(fibonacci(i) , end = " ")
+
+
 
             
 
