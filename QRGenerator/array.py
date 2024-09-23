@@ -1,13 +1,15 @@
-def even_odd(n):
-    if n % 2 == 0:
-        return "even"
-    else:
-        return "odd"
-num = int(input("enter your number"))
-result = even_odd(num)
-print(f"the number {num} is {result}")
-      
-
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5 )+1):
+        if n % i == 0:
+            return False
+    return True
+num = int(input("enter ur number"))    
+if is_prime(num):
+    print(f"the {num} is prime")
+else:
+    print(f" the {num} is not prime")    
 
 
             
