@@ -1,18 +1,14 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        swapped = False
-        for j in range(0,n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j] ,arr[j+1] = arr[j+1] ,arr[j]
-                swapped = True
-        if not swapped:
-            break
-if __name__ == "__main__":
-    arr = [64,34,25,12,22,11,90]
-    print("original array=",arr)
-    bubble_sort(arr)
-    print("sorting array=",arr )                
+def tower_of_hanoi(n,source,target, auxilary):
+    if n == 1:
+        print(f" move disk 1 from {source} to {target}")
+        return
+    tower_of_hanoi(n-1,source,auxilary,target)
+    print(f" move disk {n} from {source} to {target}")
+    tower_of_hanoi(n-1,auxilary,target,source)
+
+num_disk = 3
+tower_of_hanoi(num_disk,'A','B','C')    
+               
 
 
 
