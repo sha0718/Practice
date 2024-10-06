@@ -1,24 +1,33 @@
-def rotation_index(str1, str2):
-    # Check if the lengths of both strings are the same
-    if len(str1) != len(str2):
-        return -1
+def is_circularly_sorted(arr):
+    if not arr:  # Handle empty array
+        return True
+    
+    n = len(arr)
+    break_count = 0
+    
+    for i in range(n):
+        # Compare current element with the next element
+        if arr[i] > arr[(i + 1) % n]:
+            break_count += 1
+            
+        # If we have more than one break, it's not circularly sorted
+        if break_count > 1:
+            return False
+            
+    return True
 
-    # Create a concatenated version of the first string
-    double_str1 = str1 + str1
+# Example usage:
+print(is_circularly_sorted([2, 3, 4, 5, 0, 1]))       # Output: True
+print(is_circularly_sorted([4, 5, 6, 9, 1]))          # Output: True
+print(is_circularly_sorted([10, 11, 6, 7, 9]))        # Output: True
+print(is_circularly_sorted([1, 2, 3, 4, 5]))          # Output: True
+print(is_circularly_sorted([5, 7, 43, 987, -9, 0]))   # Output: True
+print(is_circularly_sorted([1, 2, 3, 4, 1]))          # Output: True
 
-    # Find the index of str2 in the concatenated string
-    index = double_str1.find(str2)
-
-    # If the index is found, return it; otherwise, return -1
-    return index if index != -1 else -1
-
-# Example usage
-print(rotation_index("coffee", "eecoff"))  # Output: 2
-print(rotation_index("eecoff", "coffee"))  # Output: 4
-print(rotation_index("moose", "Moose"))    # Output: -1
-print(rotation_index("isn't", "'tisn"))     # Output: 2
-print(rotation_index("Esham", "Esham"))     # Output: 0
-print(rotation_index("dog", "god"))         # Output: -1
+print(is_circularly_sorted([4, 1, 2, 5]))              # Output: False
+print(is_circularly_sorted([8, 7, 6, 5, 4, 3]))       # Output: False
+print(is_circularly_sorted([6, 7, 4, 8]))              # Output: False
+print(is_circularly_sorted([7, 6, 5, 4, 3, 2, 1]))    # Output: False
 
 
 
