@@ -1,30 +1,24 @@
-def dbl_linear(n):
-    u = [1]  # Start the sequence with the first element
-    i, j = 0, 0  # Two pointers for generating the sequence
+def final_color(colors):
+    # Function to get the missing color
+    def get_missing_color(color1, color2):
+        if color1 == color2:
+            return color1
+        else:
+            # The missing color is the one not in the pair (R, G, B)
+            return 'RGB'.replace(color1, '').replace(color2, '')
 
-    while len(u) <= n:  # Generate until we reach the nth element
-        next_x = 2 * u[i] + 1
-        next_y = 3 * u[j] + 1
-        
-        # Choose the smaller value to maintain order
-        if next_x < next_y:
-            u.append(next_x)
-            i += 1
-        elif next_x > next_y:
-            u.append(next_y)
-            j += 1
-        else:  # They are equal, we can only add one of them
-            u.append(next_x)
-            i += 1
-            j += 1
+    # Loop until we reduce the colors to a single color
+    while len(colors) > 1:
+        new_colors = []
+        for i in range(len(colors) - 1):
+            new_color = get_missing_color(colors[i], colors[i + 1])
+            new_colors.append(new_color)
+        colors = ''.join(new_colors)  # Update colors to the new row
 
-    return u[n]
+    return colors  # The final single color
 
 # Example usage:
-print(dbl_linear(10))  # Output should be 22
-print(dbl_linear(20))
-print(dbl_linear(30))
-print(dbl_linear(50))
+print(final_color("RRGBRGBB"))  # Output should be 'G'
 
 
 
