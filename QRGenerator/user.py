@@ -1,9 +1,6 @@
-def Stringchalllenge(strParam):
-    if (strParam is not None):
-        words = strParam.split(" ")
-        return len(words) 
+def factorial(num):
+    if num == 1:
+        return num
     else:
-        return 0
-print(Stringchalllenge("hello world")) 
-print(Stringchalllenge("never eat shreddded wheat with bread"))              
-print(Stringchalllenge("king of kings"))
+        return num * factorial(num-1)
+print(factorial(7))        

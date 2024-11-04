@@ -67,4 +67,3 @@ if __name__ == '__main__':
     ll.insert_values([23,43,54,67,56])
     ll.insert_at_end(73)
     ll.print()
-    

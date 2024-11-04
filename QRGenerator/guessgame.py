@@ -24,4 +24,4 @@ while is_running:
 
     else:
         print("invalid guess")
-        print("please select a number between {lowest_num} and {highest_num}") 
+        print("please select a number between {lowest_num} and {highest_num}")

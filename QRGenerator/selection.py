@@ -13,11 +13,11 @@ def selection_sort(arr):
 if __name__ == '__main__':
     tests = [
         [14,65,78,45,35,23,90],
-        [13,15,18,16],
+        [13,15,18,16,34,21],
         [],
         [29,72,64,62],
-        [7,5]
+        [7,5,23]
     ]
     for elements in tests:
       selection_sort(elements)  
-      print(elements)     
+      print(elements)
